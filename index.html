@@ -14,8 +14,12 @@
 
     .thermometer-wrapper {
       display: inline-block;
-      width: 75px;
-      height: 300px;
+      width: 12vw;
+      max-width: 90px;
+      min-width: 60px;
+      height: 40vh;
+      min-height: 200px;
+      max-height: 400px;
       background: #fafafa;
       border-radius: 4px;
       position: relative;
@@ -27,30 +31,29 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background: #00cc44; /* Bright green */
-      height: 0%;
+      background: #00cc44;
+      height: 2.67%;
       transition: height 0.5s ease;
       border-radius: 0 0 6px 6px;
     }
 
     .label {
       margin-top: 10px;
-      font-size: 2em;
+      font-size: 1.5em;
     }
 
     .goal {
       margin-top: 4px;
-      font-size: 1.9em;
+      font-size: 1.4em;
       color: green;
     }
 
     .marker {
       position: absolute;
-      left: 100%;
+      left: 105%;
       transform: translateX(5px);
-      font-size: 1.8em;
+      font-size: 1em;
       color: black;
-      margin-left: 20px;
     }
 
     .marker-top {
@@ -59,6 +62,16 @@
 
     .marker-bottom {
       bottom: 0;
+    }
+
+    /* Hide thermometer on screens smaller than 500px */
+    @media (max-width: 500px) {
+      .thermometer-wrapper,
+      .label,
+      .goal,
+      .marker {
+        display: none;
+      }
     }
   </style>
 </head>
